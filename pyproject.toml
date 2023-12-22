@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pysnapd"
-version = "1.0.1"
+version = "1.0.2"
 description = "Minimal snapd-like supervisor"
 authors = ["Kuba Szczodrzyński <kuba@szczodrzynski.pl>"]
 license = "MIT"

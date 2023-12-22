@@ -119,9 +119,9 @@ class SnapManager:
             info("Downloading", snap.download_path)
             updating = snap.is_installed
             size = 0
-            with requests.get(snap.download_url) as r:
+            with requests.get(snap.download_url, stream=True) as r:
                 with snap.download_path.open("wb") as f:
-                    for chunk in r.iter_content():
+                    for chunk in r.iter_content(128 * 1024):
                         f.write(chunk)
                         size += len(chunk)
             info("Saved", size, "bytes")
