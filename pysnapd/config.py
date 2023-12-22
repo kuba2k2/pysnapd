@@ -75,6 +75,7 @@ class Config(yaml.YAMLObject):
                 if not name:
                     break
                 snap = Snap(snap_id="", name=name)
+                snap.set_workdir(self.workdir)
                 revision = input("  Enter revision, or empty to use latest: ").strip()
                 if revision and revision.isnumeric():
                     snap.revision_pin = int(revision)
